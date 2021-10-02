@@ -6,5 +6,5 @@ def find_x(s):
     return find_x(s[1:]) + 1
 
 
-test_str = 'abcdex'
-print(find_x(test_str))
+test_str1 = 'abcdex'
+print(find_x(test_str1))
