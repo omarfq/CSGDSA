@@ -8,3 +8,14 @@ def unique_paths(rows, columns):
 
 
 print(unique_paths(3, 7))
+
+# def array_max(arr):
+#     if len(arr) == 1:
+#         return arr[0]
+
+#     max_of_remainder = array_max(arr[1:])
+
+#     if arr[0] > max_of_remainder:
+#         return arr[0]
+#     else:
+#         return max_of_remainder
