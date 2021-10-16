@@ -1,3 +1,5 @@
+# Add a method to the DoublyLinkedList class that prints all the elements in reverse order
+
 class Node:
     def __init__(self, data):
         self.data = data

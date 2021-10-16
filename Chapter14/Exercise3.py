@@ -1,3 +1,5 @@
+# Add a method to the LinkedList class that returns the last element of the list
+
 class Node:
     def __init__(self, data):
         self.data = data
