@@ -51,6 +51,33 @@ def bfs_traversal(starting_vertex):
                 queue.enqueue(adjacent_vertex)
 
 
+def bfs_search(starting_vertex, search_value):
+    queue = Queue()
+
+    visited_vertices = {}
+    visited_vertices[starting_vertex.value] = True
+    queue.enqueue(starting_vertex)
+
+    # While the queue is not empty
+    while not queue.is_empty():
+        # Remove the first vertex off the queue and make it the current vertex
+        current_vertex = queue.dequeue()
+
+        # Check if the current vertex equals the value we're looking for
+        if current_vertex.value == search_value:
+            return current_vertex.value
+
+        # Iterate over current vertex's adjacent vertices
+        for adjacent_vertex in current_vertex.adjacent_vertices:
+            # If we have not visited the adjacent vertex
+            if adjacent_vertex.value not in visited_vertices:
+                # Mark the adjacent vertex as visited
+                visited_vertices[adjacent_vertex.value] = True
+
+                # Add the adjacent vertex to the queue
+                queue.enqueue(adjacent_vertex)
+
+
 alice = Vertex('Alice')
 bob = Vertex('Bob')
 cynthia = Vertex('Cynthia')
@@ -60,4 +87,4 @@ alice.add_adjacent_vertex(cynthia)
 bob.add_adjacent_vertex(cynthia)
 cynthia.add_adjacent_vertex(bob)
 
-bfs_traversal(alice)
+print(bfs_search(alice, 'Bobs'))
